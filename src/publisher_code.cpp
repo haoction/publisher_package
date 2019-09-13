@@ -1,3 +1,4 @@
+#include "publisher_package/topic_name.h"
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 #include <sstream>
@@ -43,7 +44,7 @@ ros :: NodeHandle n ;
 * than we can send them, the number here specifies how many messages to
 * buffer up before throwing some away.
 */
-ros :: Publisher chatter_pub = n . advertise < std_msgs :: String >( "chatter" , 1000 );
+ros :: Publisher chatter_pub = n . advertise < std_msgs :: String >( topic_name , 1000 );
 ros :: Rate loop_rate (1);
 /**
 * A count of how many messages we have sent. This is used to create
